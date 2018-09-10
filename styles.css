@@ -57,9 +57,6 @@ body {
 }
 
 @media (max-height: 600px) and (orientation: landscape) {
-	body {
-		background: black;
-	}
 
 	.memory-game {
 		width: 95%;
