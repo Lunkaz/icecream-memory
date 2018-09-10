@@ -56,11 +56,21 @@ body {
 	transform: rotateY(180deg);
 }
 
+@media (max-height: 600px) and (orientation: landscape) {
+	body {
+		background: black;
+	}
 
-@media (max-width: 750px) {
 	.memory-game {
-		width: 90%;
-		height: 50%;
+		width: 95%;
+		height: 95%;
 	}
 }
 
+@media (max-width: 600px) {
+	.memory-game {
+	width: 95%;
+	height: 60%;
+}
+
+}
