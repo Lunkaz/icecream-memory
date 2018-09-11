@@ -1,4 +1,7 @@
 const cards = document.querySelectorAll('.memory-card');
+var counting = 0;
+var modal = document.getElementById('myModal');
+var span = document.getElementsByClassName("close")[0];
 
 let hasFlippedCard = false;
 let lockBoard = false;
@@ -33,20 +36,33 @@ function flipCard() {
 		}
 
 		function disableCards() {
+			counting++;
+
 			firstCard.removeEventListener('click', flipCard);
 			secondCard.removeEventListener('click', flipCard);
 
+			if (counting === 6) {
+
+				window.setTimeout(function(){modal.style.display = "block";}, 1500);
+				
+
+				span.onclick = function() {
+    				modal.style.display = "none";
+				}
+
+			}
 			resetBoard();
 		}
 
 		function unflipCards() {
+
 			setTimeout(() => {
 				firstCard.classList.remove('flip');
 				secondCard.classList.remove('flip');
 
 
 				resetBoard();
-			}, 1500);
+			}, 1300);
 		}
 
 		function resetBoard() {
@@ -60,7 +76,6 @@ function flipCard() {
 				card.style.order = ramdomPos;
 			});
 		})();
-
 
 
 
